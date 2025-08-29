@@ -59,12 +59,19 @@ CREATE TABLE bronze.CRM_salesDetails(
 
 GO
 
-IF OBJECT_ID ('bronze.ERP_locA101','U') IS NOT NULL
+IF OBJECT_ID ('bronze.ERP_custAz12','U') IS NOT NULL
 	DROP TABLE bronze.ERP_locA101
 CREATE TABLE bronze.ERP_locA101(
 	cid NVARCHAR(50),
 	bdate DATE,
 	gen NVARCHAR(50)
+)
+
+IF OBJECT_ID ('bronze.ERP_locA101','U') IS NOT NULL
+	DROP TABLE bronze.ERP_locA101
+CREATE TABLE bronze.ERP_locA101(
+	cid NVARCHAR(50),
+	cntry NVARCHAR(50),
 )
 
 GO
