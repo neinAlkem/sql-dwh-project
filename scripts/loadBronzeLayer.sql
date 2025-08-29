@@ -1,3 +1,21 @@
+/*
+=====================================================================
+Stored Procedure : Load data to Bronze Layer
+=====================================================================
+Script Purpose:
+	This script will loads data from excel into bronze layer.
+	It main components do the following:
+	- Truncates bronze table before loading all data.
+	- Uses Bulk Method to load data from external csv files to bronze layer tables.
+
+Params:
+	None
+
+Example Use:
+	EXEC bronze.loadBronzeLayer
+
+*/
+
 CREATE OR ALTER PROCEDURE bronze.loadBronzeLayer AS
 BEGIN 
 
