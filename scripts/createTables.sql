@@ -1,3 +1,20 @@
+/*
+=====================================================================
+Build all DWH tables
+=====================================================================
+Script Purpose:
+	This script will loads data from excel into bronze layer.
+	It main components do the following:
+	- Check if the table already created, if found then drop table
+	- Create table with the defined columns
+
+Params:
+	None
+
+Example Use:
+	None
+*/
+
 IF OBJECT_ID ('bronze.CRM_custInfo','U') IS NOT NULL
 	DROP TABLE bronze.CRM_custInfo
 CREATE TABLE bronze.CRM_custInfo(
