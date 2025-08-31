@@ -150,8 +150,8 @@ CREATE TABLE silver.CRM_salesDetails(
 GO
 
 IF OBJECT_ID ('silver.ERP_custAz12','U') IS NOT NULL
-	DROP TABLE silver.ERP_locA101
-CREATE TABLE silver.ERP_locA101(
+	DROP TABLE silver.ERP_custAz12
+CREATE TABLE silver.ERP_custAz12(
 	cid NVARCHAR(50),
 	bdate DATE,
 	gen NVARCHAR(50),
