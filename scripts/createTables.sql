@@ -111,7 +111,8 @@ CREATE TABLE silver.CRM_custInfo(
 	cst_lastname NVARCHAR(50),
 	cst_materialStatus NVARCHAR(50),
 	cst_gndr NVARCHAR(50),
-	cst_createDate NVARCHAR(50),
+	cst_createDate DATE,
+	dwh_loadDate DATETIME2 DEFAULT GETDATE()
 )
 
 GO
@@ -125,7 +126,8 @@ CREATE TABLE silver.CRM_prdInfo(
 	prd_cost INT,
 	prd_line NVARCHAR(50),
 	prd_start_dt DATETIME,
-	prd_end_dt DATETIME
+	prd_end_dt DATETIME,
+	dwh_loadDate DATETIME2 DEFAULT GETDATE()
 )
 
 GO
@@ -141,7 +143,8 @@ CREATE TABLE silver.CRM_salesDetails(
 	sls_dueDt INT,
 	sls_sales INT,
 	sls_quantity INT,
-	sls_price INT
+	sls_price INT,
+	dwh_loadDate DATETIME2 DEFAULT GETDATE()
 )
 
 GO
@@ -151,14 +154,18 @@ IF OBJECT_ID ('silver.ERP_custAz12','U') IS NOT NULL
 CREATE TABLE silver.ERP_locA101(
 	cid NVARCHAR(50),
 	bdate DATE,
-	gen NVARCHAR(50)
+	gen NVARCHAR(50),
+	dwh_loadDate DATETIME2 DEFAULT GETDATE()
 )
+
+GO
 
 IF OBJECT_ID ('silver.ERP_locA101','U') IS NOT NULL
 	DROP TABLE silver.ERP_locA101
 CREATE TABLE silver.ERP_locA101(
 	cid NVARCHAR(50),
 	cntry NVARCHAR(50),
+	dwh_loadDate DATETIME2 DEFAULT GETDATE()
 )
 
 GO
@@ -169,5 +176,6 @@ CREATE TABLE silver.ERP_pxCatG1v2(
 	id NVARCHAR(50),
 	cat NVARCHAR(50),
 	subcat NVARCHAR(50),
-	maintenance NVARCHAR(50)
+	maintenance NVARCHAR(50),
+	dwh_loadDate DATETIME2 DEFAULT GETDATE()
 )
