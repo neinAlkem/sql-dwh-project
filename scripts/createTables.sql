@@ -105,7 +105,7 @@ Example Use:
 IF OBJECT_ID ('silver.CRM_custInfo','U') IS NOT NULL
 	DROP TABLE silver.CRM_custInfo
 CREATE TABLE silver.CRM_custInfo(
-	cst_id INT,
+	cst_id NVARCHAR(50),
 	cst_key NVARCHAR(50),
 	cst_firstname NVARCHAR(50),
 	cst_lastname NVARCHAR(50),
