@@ -54,8 +54,19 @@ BEGIN
       ,[cst_createDate]
 	  ,CAST(GETDATE() AS datetime2) AS [dwh_loadDate]
 
-	 FROM
-		bronze.CRM_custInfo
+		FROM (
+			SELECT 
+				cst_id,
+				cst_key,
+				cst_firstname,
+				cst_lastname,
+				cst_materialStatus,
+				cst_gndr,
+				cst_createDate,
+				ROW_NUMBER() OVER(PARTITION BY cst_key ORDER BY cst_createDate DESC) AS rn
+			FROM bronze.CRM_custInfo
+		) t
+		WHERE rn = 1;
 		
 	SET @end_time = GETDATE()
 	PRINT 'Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + 'S'
