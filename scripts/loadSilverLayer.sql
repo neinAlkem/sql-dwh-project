@@ -27,6 +27,7 @@ BEGIN
 		PRINT 'Loading silver.CRM_custInfo'
 		PRINT '=========================='
 
+	TRUNCATE TABLE silver.CRM_custInfo
 	INSERT INTO silver.CRM_custInfo (
 	   [cst_id]
       ,[cst_key]
@@ -98,6 +99,7 @@ BEGIN
 		PRINT 'Loading silver.CRM_prdInfo'
 		PRINT '=========================='
 
+	TRUNCATE TABLE silver.CRM_prdInfo
 	INSERT INTO silver.CRM_prdInfo (
 	   prd_id
 	  ,cat_id
@@ -170,6 +172,7 @@ BEGIN
 		PRINT 'Loading silver.CRM_salesDetails'
 		PRINT '=========================='
 
+	TRUNCATE TABLE silver.CRM_salesDetails
 	INSERT INTO silver.CRM_salesDetails (
 	   sls_ordNum
 	  ,sls_prdKey
@@ -248,6 +251,7 @@ BEGIN
 		PRINT 'Loading silver.ERP_custAz12'
 		PRINT '=========================='
 
+	TRUNCATE TABLE silver.ERP_custAz12
 	INSERT INTO silver.ERP_custAz12 (
 		 CID
 		,BDATE
@@ -311,6 +315,7 @@ BEGIN
 		PRINT 'Loading silver.ERP_locA101'
 		PRINT '=========================='
 
+	TRUNCATE TABLE silver.ERP_locA101
 	INSERT INTO silver.ERP_locA101 (
 		 CID
 		,CNTRY
@@ -368,6 +373,7 @@ BEGIN
 		PRINT 'Loading silver.ERP_pxCatG1v2'
 		PRINT '=========================='
 
+	TRUNCATE TABLE silver.ERP_pxCatG1v2
 	INSERT INTO silver.ERP_pxCatG1v2 (
 		 id
 		,cat
